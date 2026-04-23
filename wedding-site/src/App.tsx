@@ -6,6 +6,7 @@ import RSVP from "./components/RSVP";
 import Details from "./components/Details";
 import ImportantInfo from "./components/ImportantInfo";
 import Travel from "./components/Travel";
+import PhotoBanner from "./components/PhotoBanner";
 import Footer from "./components/Footer";
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
           <RSVP rsvpCode={rsvpCode} />
           <Details />
           <ImportantInfo />
+          <PhotoBanner />
           <Travel />
           <Footer />
         </main>

@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
+  assetsInclude: ["**/*.JPG", "**/*.HEIC", "**/*.heic"],
   server: {
     port: 6767,
     proxy: {
