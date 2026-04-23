@@ -1,0 +1,387 @@
+.rsvp {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.rsvp::before {
+  content: "RSVP";
+  position: absolute;
+  top: 3rem;
+  right: -2rem;
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 15vw, 14rem);
+  font-weight: 300;
+  color: rgba(138, 158, 140, 0.07);
+  letter-spacing: 0.05em;
+  pointer-events: none;
+  user-select: none;
+}
+
+.rsvpBackground {
+  background-image: url("../assets/face2face_b&w.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 500px;
+  flex: 1 1 50%;
+}
+
+.rsvp__container {
+  padding: 2rem 0 0 0;
+  min-width: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.rsvp__form__flex {
+  display: flex;
+  flex-direction: row;
+  gap: 1.6rem;
+  margin-top: 20px;
+  justify-content: center;
+}
+.rsvp__form__toggles {
+  display: flex;
+  flex-direction: column;
+}
+
+.rsvp__form__guests {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.6rem 0;
+}
+.guest-name {
+  font-family: var(--font-body);
+  color: var(--charcoal);
+  font-size: 0.95rem;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.rsvp__warning {
+  color: var(--terracotta);
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0.6rem;
+  min-height: 2rem;
+}
+
+.rsvp__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 1.4rem;
+  text-align: left;
+}
+
+.rsvp__field label {
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--soft-brown);
+}
+
+.rsvp__details-header {
+  margin-bottom: 0.25rem;
+}
+
+.rsvp__details-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 300;
+  color: var(--charcoal);
+  margin-top: 0.25rem;
+}
+
+.rsvp__fields {
+  width: 100%;
+  max-width: 360px;
+  margin: 1.5rem auto 0;
+}
+
+.rsvp__details-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 360px;
+  margin: 0.5rem auto 0;
+}
+
+.rsvp__back {
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--soft-brown);
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.rsvp__back:hover {
+  color: var(--charcoal);
+}
+
+.section-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--sage-dark);
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  color: var(--charcoal);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+.section-sub {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--soft-brown);
+  font-weight: 300;
+}
+
+.rsvp__field input,
+.rsvp__field select,
+.rsvp__field textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--sage-light);
+  padding: 0.6rem 0;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--charcoal);
+  outline: none;
+  transition: border-color 0.3s ease;
+  width: 100%;
+  -webkit-appearance: none;
+}
+
+.rsvp__field select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%238a9e8c'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  padding-right: 1.5rem;
+}
+
+.rsvp__field textarea {
+  resize: vertical;
+  min-height: 100px;
+  border: 1px solid var(--sage-light);
+  padding: 0.8rem;
+  border-radius: 2px;
+}
+
+.rsvp__field input:focus,
+.rsvp__field select:focus,
+.rsvp__field textarea:focus {
+  border-color: var(--sage-dark);
+}
+
+.rsvp__field input::placeholder,
+.rsvp__field textarea::placeholder {
+  color: #bbb;
+}
+
+.rsvp__toggle-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.rsvp__toggle {
+  flex: 1;
+  width: 100px;
+  min-width: 50px;
+  padding: 0.8rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid var(--sage-light);
+  color: var(--charcoal);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.rsvp__toggle:hover {
+  border-color: var(--sage-dark);
+}
+
+.rsvp__toggle.active {
+  background: var(--charcoal);
+  border-color: var(--charcoal);
+  color: var(--cream);
+}
+
+.rsvp__submit {
+  padding: 1rem 2.5rem;
+  background: var(--terracotta);
+  color: white;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: center;
+  min-width: 200px;
+}
+
+.rsvp__submit:hover:not(:disabled) {
+  background: var(--charcoal);
+}
+
+.rsvp__submit:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.rsvp__back__reset {
+  display: block;
+  margin: 0.75rem auto 0;
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--soft-brown);
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.rsvp__back__reset:hover {
+  color: var(--charcoal);
+}
+
+.rsvp__thanks {
+  text-align: center;
+  padding: 1rem 0 2rem;
+}
+
+.rsvp__thanks-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 300;
+  color: var(--charcoal);
+  margin: 0.25rem 0 0.5rem;
+}
+
+.rsvp__thanks-text {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--soft-brown);
+  margin-bottom: 2rem;
+}
+
+/* ── Already-responded view ───────────────────────────────────── */
+
+.rsvp__responded {
+  text-align: center;
+  padding: 1rem 0 2rem;
+}
+
+.rsvp__responded-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 300;
+  color: var(--charcoal);
+  margin: 0.25rem 0 0.5rem;
+}
+
+.rsvp__responded-sub {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--soft-brown);
+  margin-bottom: 2rem;
+}
+
+.rsvp__responded-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 2rem;
+  width: 100%;
+  max-width: 360px;
+}
+
+.rsvp__responded-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--sage-light);
+}
+
+.rsvp__responded-row:first-child {
+  border-top: 1px solid var(--sage-light);
+}
+
+.rsvp__responded-name {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--charcoal);
+}
+
+.rsvp__responded-status {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.rsvp__responded-status--accepted {
+  color: var(--sage-dark);
+}
+
+.rsvp__responded-status--declined {
+  color: var(--soft-brown);
+}
+
+.rsvp__responded-status--pending {
+  color: #bbb;
+}
+
+@media (max-width: 799px) {
+  .rsvp {
+    flex-direction: column;
+    height: auto;
+  }
+  .rsvp__field-row {
+    grid-template-columns: 1fr;
+  }
+  .rsvpBackground {
+    background-image: url("../assets/portraitStanding_b&w.jpg");
+    width: 100%;
+    flex: 0 0 auto;
+    min-height: 200px;
+    background-size: cover;
+    position: relative;
+  }
+}

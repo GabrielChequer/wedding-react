@@ -1,0 +1,23 @@
+/* Footer */
+.details__footer {
+  margin-top: 4rem;
+  padding: 4rem 2rem;
+  text-align: center;
+  background: var(--charcoal);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.details__footer-names {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--gold);
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}

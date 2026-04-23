@@ -1,0 +1,180 @@
+.details {
+  padding: 4rem 0 0;
+  position: relative;
+}
+
+.details__container {
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+.details__header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+/* Venue Card */
+.details__venue-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  background: var(--cream);
+  border: 1px solid var(--sage-light);
+  padding: 3rem;
+  margin-bottom: 4rem;
+  align-items: center;
+}
+
+.details__venue-label {
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sage-dark);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.details__venue-info h3 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--charcoal);
+  margin-bottom: 0.4rem;
+}
+
+.details__venue-info > p {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.details__venue-note {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1rem !important;
+  line-height: 1.75;
+  color: #555 !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.details__map-link {
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.details__map-link:hover {
+  color: var(--charcoal);
+}
+
+/* Venue decoration */
+.details__venue-decoration {
+  width: 100%;
+  aspect-ratio: 1;
+  margin: 0 auto;
+  background-image: url("../assets/magnolia.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  position: relative;
+  animation: float 7s ease-in-out infinite;
+}
+
+/* Timeline */
+.details__section-label {
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  margin-bottom: 2rem;
+}
+
+.details__timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.details__timeline::before {
+  content: "";
+  position: absolute;
+  left: 140px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--sage-light);
+}
+
+.details__timeline-item {
+  display: grid;
+  grid-template-columns: 120px 24px 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.details__timeline-time {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--soft-brown);
+  text-align: right;
+  padding-top: 0.1rem;
+}
+
+.details__timeline-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--terracotta);
+  border: 2px solid var(--cream);
+  outline: 1px solid var(--terracotta);
+  margin-top: 0.3rem;
+  justify-self: center;
+  margin-left: 10px;
+}
+
+.details__timeline-content strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--charcoal);
+  margin-bottom: 0.15rem;
+}
+
+.details__timeline-content span {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+@media (max-width: 768px) {
+  .details__venue-card {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+  .details__venue-decoration {
+    order: -1;
+  }
+  .details__venue-decoration {
+    max-width: 200px;
+  }
+
+  .details__timeline::before {
+    left: 80px;
+  }
+  .details__timeline-item {
+    grid-template-columns: 65px 20px 1fr;
+    gap: 0.6rem;
+  }
+  .details__timeline-time {
+    font-size: 0.78rem;
+  }
+}
