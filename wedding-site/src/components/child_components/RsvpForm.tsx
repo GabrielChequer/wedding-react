@@ -25,6 +25,7 @@ function RsvpAnswerForm({
   const [details, setDetails] = useState<Record<string, GuestDetail>>({});
   const [currentDetailIndex, setCurrentDetailIndex] = useState(0);
   const [attendingGuests, setAttendingGuests] = useState<FamilyMember[]>([]);
+  const [emailError, setEmailError] = useState("");
 
   const setAnswer = (id: number, value: 3 | 2) =>
     setAnswers((prev) => ({ ...prev, [id]: value }));
@@ -99,10 +100,19 @@ function RsvpAnswerForm({
   };
 
   const updateDetail = (guestId: number, field: string, value: string) => {
+    if (field === "emailAddress") setEmailError("");
     setDetails((prev) => ({
       ...prev,
       [guestId]: { ...prev[guestId], [field]: value },
     }));
+  };
+
+  const validateCurrentEmail = (): boolean => {
+    const email = currentMemberDetails?.emailAddress ?? "";
+    if (email === "") return true;
+    const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    if (!valid) setEmailError("Please enter a valid email address.");
+    return valid;
   };
 
   return (
@@ -197,6 +207,9 @@ function RsvpAnswerForm({
                     )
                   }
                 />
+                {emailError && (
+                  <span className="rsvp__field-error">{emailError}</span>
+                )}
               </div>
 
               <div className="rsvp__field">
@@ -264,11 +277,12 @@ function RsvpAnswerForm({
                 <button
                   type="button"
                   className="rsvp__submit"
-                  onClick={() =>
+                  onClick={() => {
+                    if (!validateCurrentEmail()) return;
                     setCurrentDetailIndex((i) =>
                       Math.min(attendingGuests.length - 1, i + 1),
-                    )
-                  }
+                    );
+                  }}
                 >
                   Next →
                 </button>
@@ -277,6 +291,7 @@ function RsvpAnswerForm({
                   type="button"
                   className="rsvp__submit"
                   onClick={async () => {
+                    if (!validateCurrentEmail()) return;
                     await submitAllResponses(details);
                     setStage("done");
                   }}
