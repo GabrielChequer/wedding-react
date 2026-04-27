@@ -382,6 +382,12 @@
   .rsvp__field-row {
     grid-template-columns: 1fr;
   }
+  /* Prevent iOS Safari from zooming on input focus (requires font-size >= 16px) */
+  .rsvp__field input,
+  .rsvp__field select,
+  .rsvp__field textarea {
+    font-size: 16px;
+  }
   .rsvpBackground {
     background-image: url("../assets/portraitStanding_b&w.jpg");
     width: 100%;
